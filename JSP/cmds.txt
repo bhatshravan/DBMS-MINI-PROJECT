@@ -1,0 +1,65 @@
+<% code fragment %>
+
+<%! declaration; [ declaration; ]+ ... %>
+ 
+<%= expression %>
+
+<%-- This is JSP comment --%>
+
+<%@ directive attribute="value" %>
+=====================================================
+      <%for ( fontSize = 1; fontSize <= 3; fontSize++){ %>
+         <font color = "green" size = "<%= fontSize %>">
+            JSP Tutorial
+      </font><br />
+      <%}%>
+=======================================================
+<%@ page import = "java.io.*,java.util.*" %>
+
+<html>
+
+=========================
+
+<%= request.getParameter("first_name")%> --> Gets name="math" parmater from the html
+
+
+=========================
+
+Cookie firstName = new Cookie("first_name", request.getParameter("first_name"));
+  
+   firstName.setMaxAge(60*60*24); 
+   response.addCookie( firstName );
+
+
+ Cookie[] cookies = null;
+         
+         // Get an array of Cookies associated with the this domain
+         cookies = request.getCookies();
+         
+         if( cookies != null ) {
+            out.println("<h2> Found Cookies Name and Value</h2>");
+
+ for (int i = 0; i < cookies.length; i++) {
+               cookie = cookies[i];
+               out.print("Name : " + cookie.getName( ) + ",  ");
+               out.print("Value: " + cookie.getValue( )+" <br/>");
+            }
+
+
+cookie.setMaxAge(0); --> Delete cookies
+
+============================================
+
+ String userIDKey = new String("userID");
+   String userID = new String("ABCD");
+
+   // Check if this is new comer on your Webpage.
+   if (session.isNew() ){
+      title = "Welcome to my website";
+      session.setAttribute(userIDKey, userID);
+      session.setAttribute(visitCountKey,  visitCount);
+   } 
+   visitCount = (Integer)session.getAttribute(visitCountKey);
+   visitCount = visitCount + 1;
+   userID = (String)session.getAttribute(userIDKey);
+   session.setAttribute(visitCountKey,  visitCount);
