@@ -1,0 +1,12 @@
+MariaDB> CREATE USER 'monty'@'localhost' IDENTIFIED BY 'some_pass';
+MariaDB> GRANT ALL PRIVILEGES ON mydb.* TO 'monty'@'localhost';
+MariaDB> FLUSH PRIVILEGES;
+MariaDB> quit
+
+
+proj - pass
+
+CREATE DATABASE proj;
+USE project;
+
+DROP DATABASE proj;

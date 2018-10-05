@@ -1,0 +1,28 @@
+API KEY = D4V3YEYJGNXZ27PL
+
+https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=NSE%3AVGUARD&apikey=D4V3YEYJGNXZ27PL&datatype=csv&outputsize=full
+
+awk '{print FILENAME,","$0}' *.csv > ab.csv
+awk ' { print $0","FILENAME"\nhello" } ' filename
+
+remove all \n, --> ,
+remove all hello\n--> null
+
+replace all - by comma
+
+TABLE of stocks
+
+Left side bar -> https://github.com/haxxorsid/stock-management-system/
+Stock app ->     https://github.com/seanjohn85/Java-Stock-Management-DB-app
+
+ws-icon-0 = ";"
+ws-icon-1 = ";"
+ws-icon-2 = ";"
+ws-icon-0 = "5;"
+ws-icon-1 = "6;"
+ws-icon-2 = "7;7"
+ws-icon-3 = "8;8>"
+ws-icon-4 = "9;9"
+ws-icon-5 = "10;0"
+ws-icon-9 = "Code;"
+ws-icon-default = 
