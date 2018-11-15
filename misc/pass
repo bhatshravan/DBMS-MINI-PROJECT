@@ -3,6 +3,27 @@ MariaDB> GRANT ALL PRIVILEGES ON mydb.* TO 'monty'@'localhost';
 MariaDB> FLUSH PRIVILEGES;
 MariaDB> quit
 
+18 july
+i3
+99 -> 10:13
+79 -> 10:31
+------------
+20% -> 18 minutes --> 1 1/2 hours to 2 hours
+
+xfce
+76 -> 10:34
+51 -> 11:02
+------------
+25 % -> 30 minutes --> 2 hours
+
+Windows
+44 % -> 11:07
+24 % -> 11:35 
+------------
+
+firefox,thunar,notepadqq
+
+netstat -tlnp
 
 proj - pass
 
@@ -10,3 +31,94 @@ CREATE DATABASE proj;
 USE project;
 
 DROP DATABASE proj;
+
+HF1
+HF1
+
+
+http://www.javaknowledge.info/login-and-registration-example-in-jsp-with-session/
+
+<jsp:include page="..." />
+
+
+  Cookie lastName = new Cookie("last_name", request.getParameter("last_name"));
+   
+   // Set expiry date after 24 Hrs for both the cookies.
+   firstName.setMaxAge(60*60*24); 
+   lastName.setMaxAge(60*60*24); 
+   
+   // Add both the cookies in the response header.
+   response.addCookie( firstName );
+   
+   
+   
+   
+Class.forName("com.mysql.jdbc.Driver"); 
+java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/testing","root","root"); 
+Statement st= con.createStatement(); 
+
+rs=st.executeQuery("select * from services where room_no="+room_no+" and hotel like 'Blue Moon';");
+
+while(rs.next())
+{
+    name=rs.getString("name");
+	<%out.println(name);%>
+}
+
+
+ grep -E '*201[6-8]+' test.csv > test2.csv 
+ 
+ 
+CREATE TABLE `project`.`Price` (
+  `timestamp` DATE NOT NULL,
+  `open` INT NOT NULL,
+  `high` INT NULL,
+  `low` INT NULL,
+  `close` INT NULL,
+  `volume` INT NULL,
+  `Series` VARCHAR(45) NULL,
+  CONSTRAINT `Series`
+    FOREIGN KEY ()
+    REFERENCES `project`.`Companies` ()
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE Price (`timestamp` DATE NOT NULL,   `open` INT NOT NULL,   `high` INT NULL,   `low` INT NULL,   `close` INT NULL,   `volume` INT NULL,   `Series` VARCHAR(45) NULL,  FOREIGN KEY (Series) REFERENCES Companies(Series));
+
+
+CREATE DEFINER=`root`@`localhost` TRIGGER `project`.`user_audits_AFTER_INSERT` AFTER INSERT ON `user_audits` FOR EACH ROW
+BEGIN
+insert into user_audits2(`name`,`email`,`password`,`phone`,`bank`,`dateofreg`) values(new.name,new.email,new.password,new.phone,new.bank,now());
+END
+
+CREATE TRIGGER triger_name
+{BEFORE | AFTER \ INSTEAD OF}
+{INSERT UPDATE DELETE}
+{of col name}
+on table_name
+
+
+
+
+                        String query = select * from user where username=? and password=?""
+                        PreparedStatement psm =conn.prepareStatement(Query);
+                        psm.setString(1,username;
+                        psm.setString(2,_password);
+                        ResultSet rs=psm.executeQuery();)
+						
+						ResultSet rs = st.executeQuery("select * from users where email='" + userid + "';");
+						
+						String inser = "insert into users(`name`,`email`,`password`,`phone`,`bank`) values('" + name + "','" + email + "','" + encpass + "','" + phone + "','" + bank + "');";
+                                    out.println(inser);
+                                    //int i = st.executeUpdate(inser);
+                                    CallableStatement cstat = con.prepareCall("{call register (?,?,?,?,?)}");
+                                    cstat.setString(1, name);
+                                    cstat.setString(2, email);
+                                    cstat.setString(3, encpass);
+                                    cstat.setString(4, phone);
+                                    cstat.setString(5, bank);
+                                    
+                                    out.println(cstat);
+                                    ResultSet rs2 =cstat.executeQuery();
+                                    con.close();
+                                    cstat.close();
