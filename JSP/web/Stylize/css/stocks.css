@@ -1,5 +1,68 @@
-.main{
+@font-face {
+  font-family: 'KoHo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('KoHo Regular'), local('KoHo-Regular'), url(/WebApplication1/web/Stylize/fonts/K2F-fZ5fmddNNi4UfQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+.navbar{
+	font-family: 'KoHo', sans-serif;
+	font-size: 16px;
+}
+
+.bg{
+	background-color: #f7f7f7;
+	font-family: 'KoHo', sans-serif;
+}
+
+
+
+.ctable{
+	background-color: #FFFFFF;
+}
+
+.container{
 	margin: auto;
 	text-align: center;
 	line-height: 1.4;
+}
+
+.form-mains{
+	margin-top: 50px;
+}
+
+.label-big{
+	font-size: 30px;
+}
+
+.jumbo-green{
+	background-color:#d1ffab !important; 
+}
+
+.jumbo-red{
+	background-color: #ff7467 !important;
+}
+
+.a-n{
+	color: inherit;
+
+}
+
+a:link a:visited a:hover a:active{
+ color: black; 
+}
+
+.table-big{
+	font-size: 15px;
+	text-align: center;
+	marker-start: 3px;
+	padding-left: 5px;
+}
+
+.table-big-head{
+	font-size: 20px;
+	text-align: center;
+	margin-left: 13px;
+	padding-left: 5px;
 }
