@@ -17,7 +17,7 @@
 
 
         <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link href="css/login.css" rel="stylesheet">
+        <link href="Stylize/css/login.css" rel="stylesheet">
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -29,7 +29,7 @@
                 <div id="login-row" class="row justify-content-center align-items-center">
                     <div id="login-column" class="col-md-6">
                         <div class="login-box col-md-12">
-                            <h2 class="text-center text-info">Registration</h2><br/>
+                            <h2 class="text-center text-info">Registration</h2><br/><center>
 
 
                             <%                                   
@@ -69,7 +69,6 @@
                                     cstat.setString(4, phone);
                                     cstat.setString(5, bank);
                                     
-                                    out.println(cstat);
                                     ResultSet rs2 =cstat.executeQuery();
                                     con.close();
                                     cstat.close();
@@ -87,7 +86,7 @@
 
 
                             <a href="login.html" name="Log In" class="btn btn-success btn-md" style="text-align:'center';">Log In </a>
-
+                        </center>
                         </div>
                     </div>
                 </div>
