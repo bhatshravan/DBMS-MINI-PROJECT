@@ -18,8 +18,9 @@
 
 	<div class="container form-mains">
 		<div class="row">
-			<h2>Your current balance is:<br/><i class="fa fa-dollar-sign"></i>
-				<%@include file="../style/money.jsp"%>
+			<h2>Your current balance is:<br/></h2>
+			<h2 id="bal">
+				<i class="fa fa-rupee-sign"></i><%@include file="../style/money.jsp"%>
 			</h2>
 
 
@@ -29,13 +30,19 @@
 			<div class="col-md-offset-4 col-md-4">
 				<form>
 					<div class="form-group">
-						<label for="Amount" class="label-big">Amount to deposit:</label>
-						<input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter amount in Rs.">
+						<label for="Amount" class="label-big">Amount to deposit to stock market:</label>
+						<input type="number" class="form-control" id="inputAmt" aria-describedby="emailHelp" placeholder="Enter amount in Rs.">
 					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button id="bank-deposit" class="btn btn-primary">Submit</button>
 				</form>
 			</div>
 		</div>
+		<hr/>
+		<div class="row">
+			<b><h3 class="msg">
+			</h3></b>
+		</div>
+
 	</div>
 
 	<div id="footer">

@@ -7,5 +7,4 @@
             "root", "fireman");
     Statement st = con.createStatement();
 
-    
 %>

@@ -1,43 +1,3 @@
-<!--html>
-<head>
-<title>Login</title>
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link href="Stylize/css/login.css" rel="stylesheet">
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-</head>
-<body>
-<div id="login">
-
-    <div class="container">
-        <div id="login-row" class="row justify-content-center align-items-center">
-            <div id="login-column" class="col-md-6">
-                <div class="login-box col-md-12">
-                    <form id="login-form" class="form" action="login.jsp" method="post">
-                        <h3 class="text-center text-info">Login</h3>
-                        <div class="form-group">
-                            <label for="email" class="text-info">Email:</label><br>
-                            <input type="email" name="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="text-info">Password:</label><br>
-                            <input type="password" name="pwd" id="pwd" class="form-control" required>
-                        </div>
-                        <div class="form-group"><br>
-                            <input type="Submit" name="Submit" class="btn btn-info btn-md" value="submit">
-                        </div>
-                        <div id="register-link" class="text-right">
-                            <a href="register.html" class="text-info">Register</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</body>
-</html-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,9 +7,13 @@
 <title>Log In</title>
 
 <link rel="shortcut icon" type="image/png" href="/WebApplication1/favicon.png"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!--
+-->
+
+<link rel="stylesheet" href="/WebApplication1/Stylize/fa/css/all.min.css">
+<link rel="stylesheet" href="/WebApplication1/Stylize/boot/bootstrap.min.css" >
+<script src="/WebApplication1/Stylize/boot/jquery.min.js"></script>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style type="text/css">
@@ -171,16 +135,26 @@
     }
 </style>
 </head>
-<body>
+<body onload="loadsign()">
+
+    <script>
+        function loadsign () {
+                    if(document.getElementById('myModal').style.display=='none') { 
+            document.getElementById('myModal').style.display='block'; 
+        } 
+        }
+    </script>
     <script type="text/javascript">
+    
     $(window).on('load',function(){
         $('#myModal').modal('show');
     });
+
 </script>
 
 
 <!-- Modal HTML -->
-<div id="myModal" class="modal fade">
+<div id="myModal"class="modal fade">
     <div class="modal-dialog modal-login">
         <div class="modal-content">
             <div class="modal-header">              
@@ -212,3 +186,43 @@
 </div>     
 </body>
 </html>                            
+<!--html>
+<head>
+<title>Login</title>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="Stylize/css/login.css" rel="stylesheet">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="login">
+
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div class="login-box col-md-12">
+                    <form id="login-form" class="form" action="login.jsp" method="post">
+                        <h3 class="text-center text-info">Login</h3>
+                        <div class="form-group">
+                            <label for="email" class="text-info">Email:</label><br>
+                            <input type="email" name="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-info">Password:</label><br>
+                            <input type="password" name="pwd" id="pwd" class="form-control" required>
+                        </div>
+                        <div class="form-group"><br>
+                            <input type="Submit" name="Submit" class="btn btn-info btn-md" value="submit">
+                        </div>
+                        <div id="register-link" class="text-right">
+                            <a href="register.html" class="text-info">Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html-->

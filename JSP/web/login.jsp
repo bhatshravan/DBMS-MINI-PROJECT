@@ -18,10 +18,13 @@
     <link rel="icon" type="image/png" href="../Photos/whiteLogo.png">
 
 
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href = "/WebApplication1/Stylize/boot/bootstrap.min.css" rel = "stylesheet">
+    <script src="/WebApplication1/Stylize/boot/bootstrap.min.js"></script>
+    <script src="/WebApplication1/Stylize/boot/jquery.min.js"></script>
+    <!--Font awesome-->
+<link rel="stylesheet" href="/WebApplication1/Stylize/fa/css/all.min.css">
+    
     <link href="Stylize/css/login.css" rel="stylesheet">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 

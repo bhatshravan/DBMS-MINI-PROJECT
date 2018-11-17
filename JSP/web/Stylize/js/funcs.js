@@ -1,21 +1,66 @@
-$('#add').click(function () {
+$(document).ready(function(){
 
-  var name = $('#add').attr("data_id");
+	$('#bank-deposit').click(function () {
 
-  var id = $('#add').attr("uid");
+		var id = $('#inputAmt').val();
+		var data = 'amt='+ id;
 
-      var data = 'id='+ id  & 'name='+ name; // this where i add multiple data using  ' & '
+		$.ajax({
+			type:"GET",
+			cache:false,
+			url:"/WebApplication1/stocks/ajax/bank-deposit.jsp",
+				data:data,    
+				success: function (html) {
+					//console.log(html);
+					$('.msg').html(html);
+					//$('#inputAmt').val(0);
+				}
+			});
 
-      $.ajax({
-        type:"GET",
-        cache:false,
-        url:"welcome.php",
-        data:data,    // multiple data sent using ajax
-        success: function (html) {
+		return false;
+	});
 
-          $('#add').val('data sent sent');
-          $('#msg').html(html);
-        }
-      });
-      return false;
+	$('#bank-withdraw').click(function () {
+
+		var id = $('#inputAmt').val();
+		var data = 'amt='+ id;
+
+		$.ajax({
+			type:"GET",
+			cache:false,
+			url:"/WebApplication1/stocks/ajax/bank-withdraw.jsp",
+				data:data,    
+				success: function (html) {
+					//console.log(html);
+					$('.msg').html(html);
+					//$('#inputAmt').val(0);
+				}
+			});
+
+		return false;
+	});
+
+	$('#price-check').click(function () {
+
+
+		var type = document.querySelector('input[name="rate"]:checked').value;
+        var stock = $('#stock').val();
+        var to = $('#todate').val();
+        var from = $('#fromdate').val();
+
+        var data = 'stock='+stock+'&type='+type+'&from='+from+'&to='+to;
+		console.log(from,to,type,stock)
+
+		$.ajax({
+			type:"GET",
+			cache:false,
+			url:"/WebApplication1/stocks/ajax/price-retrieve.jsp",
+				data:data,    
+				success: function (html) {
+					$('.msg').html(html);
+				}
+			});
+
+		return false;
+	});
 });
