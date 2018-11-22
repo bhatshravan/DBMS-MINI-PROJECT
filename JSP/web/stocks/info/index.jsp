@@ -26,7 +26,7 @@
 			</a>
 		</div>
 		<div class="jumbotron jumbo-blue jumbo-small">
-			<a href="sellstocks.html" class="a-n">
+			<a href="/WebApplication1/stocks/price/index.jsp" class="a-n">
 				<h2><i class="fa fa-cocktail"></i> Historical Prices of companies</h2>
 			</a>
 		</div>

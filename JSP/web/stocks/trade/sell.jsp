@@ -17,8 +17,43 @@
 	
 	<div class="container">
 		<div class="row">
-			<h2>Price checker</h2>
+			<h2>Sell stocks</h2>
 		</div>
+		<div class="row">
+			<h4>Your current balance is:<br/></h4>
+			<h4 id="bal">
+				<i class="fa fa-rupee-sign"></i><%@include file="../style/money.jsp"%>
+			</h4>
+
+
+			<hr/>
+		</div>
+		<table class='table table-bordered ctable'>
+
+				<thead align="center">
+					<tr class="table-big-head" align="center">
+						<th align="center">&nbsp;&nbsp;Company name</th>
+						<th>&nbsp;&nbsp;Volume</th>
+						<th>   Price</th>
+						<th>   Date</th>
+					</tr>
+				</thead>
+				<tbody class="table-big">
+					<%
+					rs = st.executeQuery("select * from investments WHERE user_id = '"+uid+"' ORDER BY time DESC, symbol ASC;");
+					while(rs.next())
+						{
+							out.println("<tr>");
+								out.println("<td><b>"+rs.getString("symbol")+"</b></td>");
+								out.println("<td>"+rs.getString("volume")+"</td>");
+								out.println("<td>"+rs.getString("price_bought")+"</td>");
+								out.println("<td>"+rs.getString("time")+"</td>");
+							out.println("</tr>");
+						}
+						%>
+					</tbody>
+				</table>
+				<hr/>
 		<div class="row align-items-center">
 			<div class="col-md-offset-2 col-md-8">
 				<form>
@@ -75,35 +110,26 @@
 							<option value="ZEEL">ZEEL</option>
 						</select> 
 					</div>
-					<div class="form-group col-md-4">
-						<label for="Date" class="label-small">From Date:</label>
-						<input type="date" class="form-control" id="fromdate">
+					<div class="form-group row col-md-12>
+						<label for="Date" class="label-small">Bought date:</label>
+						<input type="date" class="form-control" id="date_buy">
 					</div>
-					<div class="form-group col-md-offset-4 col-md-4">
-						<label for="date" class="label-small">To Date:</label>
-						<input type="date" class="form-control" id="todate">
+					<div class="form-group row col-md-4>
+						<label for="Date" class="label-small">Date to sell:</label>
+						<input type="date" class="form-control" id="date_sell">
 					</div>
-					<div class="form-group">
-						<label for="Amount" class="label-small">Info:</label>
-						<select id="type">
-							<option value="open">Open</option>
-							<option value="close">Close</option>
-							<option value="high">High</option>
-							<option value="low">Low</option>
-							<option value="volume">Volume</option>
-						</select>
+					<div class="form-group row ">
                     </div>
-                    <!--div class="form-group">
-						<label for="Interval" class="label-small">Interval:</label>
-						<select id="interval">
-							<option value="1">Daily</option>
-							<option value="7">Open</option>
-							<option value="30">Monthly</option>
-							<option value="15">15 days</option>
-						</select>
-                    </div-->
+					
+					<div class="form-group row col-md-offset-4 col-md-4">
+						<label for="Volume" class="label-small">Volume:</label>
+						<input type="number" class="form-control" id="volume" size="5" required>
+                    </div>
+                    <div class="form-group row ">
+                    </div>
                     
-					<button id="price-check" class="btn btn-success">Submit</button>
+                    <button id="trade-buy-check" class="btn btn-danger">Check price</button>
+					<button id="trade-buy-submit" class="btn btn-success">Submit</button>
 				</form>
 			</div>
 		</div>

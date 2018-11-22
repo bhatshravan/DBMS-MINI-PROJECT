@@ -1,6 +1,5 @@
 
 <link rel="shortcut icon" type="image/png" href="/WebApplication1/favicon.png"/>
-
 <meta charset="utf-8"/>
 
 
@@ -11,6 +10,8 @@
 <script src="/WebApplication1/Stylize/boot/bootstrap.min.js"></script>
 
 <script src="/WebApplication1/Stylize/boot/jquery.min.js"></script>
+
+<script src="/WebApplication1/Stylize/canvas/canvasjs.min.js"></script>
 
 <!--Font awesome-->
 <link rel="stylesheet" href="/WebApplication1/Stylize/fa/css/all.min.css">

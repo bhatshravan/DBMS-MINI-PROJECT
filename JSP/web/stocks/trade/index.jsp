@@ -16,12 +16,12 @@
 	<%@include file="../style/navbar.jsp"%>
 	<div class="container">
 		<div class="jumbotron jumbo-green">
-			<a href="buystocks.html" class="a-n">
+			<a href="buy.jsp" class="a-n">
 				<h1><i class="fa fa-feather-alt"></i> Buy Stocks</h1>
 			</a>
 		</div>
 		<div class="jumbotron jumbo-red">
-			<a href="sellstocks.html" class="a-n">
+			<a href="sell.jsp" class="a-n">
 				<h1><i class="fa fa-cocktail"></i> Sell Stocks</h1>
 			</a>
 		</div>
