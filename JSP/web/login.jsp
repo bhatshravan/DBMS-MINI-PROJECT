@@ -23,7 +23,7 @@
     <script src="/WebApplication1/Stylize/boot/jquery.min.js"></script>
     <!--Font awesome-->
 <link rel="stylesheet" href="/WebApplication1/Stylize/fa/css/all.min.css">
-    
+
     <link href="Stylize/css/login.css" rel="stylesheet">
 
 </head>
@@ -38,20 +38,20 @@
                         <h2 class="text-center text-info">Login failure</h2><br/>
 
 
-                        <%        
+                        <%
 
                         String userid = request.getParameter("email");
                         String pwd = request.getParameter("pwd");
                         String username;
 
                         String query = "select * from users where email=?";
-                        PreparedStatement psm =con.prepareStatement(query);
+                        PreparedStatement psm = con.prepareStatement(query);
                         psm.setString(1,userid);
                         ResultSet rs=psm.executeQuery();
                         /*
                         session.setAttribute("userid", userid);
                         String pwd = request.getParameter("pwd");
-                        
+
                         String used = "select * from users where email='" + userid + "';";
                         out.println(used);
 
@@ -84,7 +84,7 @@
 
                                 <%
                             }
-                        } 
+                        }
                         catch (IOException e)
                         { %>
 
@@ -95,7 +95,7 @@
 
                             }
                         }
-                        else 
+                        else
                             {
                                 %>
                                 <p class="text-info text-center">
@@ -117,4 +117,3 @@
 
         </body>
         </html>
-

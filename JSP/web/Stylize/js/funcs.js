@@ -9,13 +9,13 @@ $(document).ready(function(){
 			type:"GET",
 			cache:false,
 			url:"/WebApplication1/stocks/ajax/bank-deposit.jsp",
-			data:data,    
+			data:data,
 			success: function (html) {
-					//console.log(html);
-					$('.msg').html(html);
-					//$('#inputAmt').val(0);
-				}
-			});
+				//console.log(html);
+				$('.msg').html(html);
+				//$('#inputAmt').val(0);
+			}
+		});
 
 		return false;
 	});
@@ -29,13 +29,13 @@ $(document).ready(function(){
 			type:"GET",
 			cache:false,
 			url:"/WebApplication1/stocks/ajax/bank-withdraw.jsp",
-			data:data,    
+			data:data,
 			success: function (html) {
-					//console.log(html);
-					$('.msg').html(html);
-					//$('#inputAmt').val(0);
-				}
-			});
+				//console.log(html);
+				$('.msg').html(html);
+				//$('#inputAmt').val(0);
+			}
+		});
 
 		return false;
 	});
@@ -50,13 +50,13 @@ $(document).ready(function(){
 		var from = $('#fromdate').val();
 
 		var data = 'stock='+stock+'&type='+type+'&from='+from+'&to='+to+'&interval='+interval;
-		console.log(from,to,type,stock)
+		console.log(from,to,type,stock);
 
 		$.ajax({
 			type:"GET",
 			cache:false,
 			url:"/WebApplication1/stocks/ajax/price-retrieve.jsp",
-			data:data,    
+			data:data,
 			success: function (html) {
 				$('.msg').html(html);
 			}
@@ -79,12 +79,12 @@ $(document).ready(function(){
 			type:"GET",
 			cache:false,
 			url:"/WebApplication1/stocks/ajax/trade-buy-check.jsp",
-			data:data,    
+			data:data,
 			success: function (html) {
 				$('.msg').html(html);
 			}
 		});
-		
+
 		return false;
 	});
 
@@ -103,13 +103,62 @@ $(document).ready(function(){
 			type:"GET",
 			cache:false,
 			url:"/WebApplication1/stocks/ajax/trade-buy-submit.jsp",
-			data:data,    
+			data:data,
 			success: function (html) {
 				$('.msg').html(html);
 			}
 		});
-		
+
 		return false;
 	});
-	
+
+	$('#trade-sell-check').click(function () {
+
+		//var type = document.querySelector('input[name="rate"]:checked').value;
+		var stock = $('#stock').val();
+		var buydate = $('#buydate').val();
+		var selldate = $('#selldate').val();
+		var volume = $('#volume').val();
+
+		var data = 'stock='+stock+'&buydate='+buydate+'&volume='+volume+'&selldate='+selldate;
+		console.log(data);
+
+		$.ajax({
+			type:"GET",
+			cache:false,
+			url:"/WebApplication1/stocks/ajax/trade-sell-check.jsp",
+			data:data,
+			success: function (html) {
+				$('.msg').html(html);
+			}
+		});
+
+		return false;
+	});
+	$('#trade-sell-submit').click(function () {
+
+		//var type = document.querySelector('input[name="rate"]:checked').value;
+		var stock = $('#stock').val();
+		var buydate = $('#buydate').val();
+		var selldate = $('#selldate').val();
+		var volume = $('#volume').val();
+
+		console.log(volume);
+		var data = 'stock='+stock+'&buydate='+buydate+'&volume='+volume+'&selldate='+selldate;
+
+		console.log(data);
+
+		$.ajax({
+			type:"GET",
+			cache:false,
+			url:"/WebApplication1/stocks/ajax/trade-sell-submit.jsp",
+			data:data,
+			success: function (html) {
+				$('.msg').html(html);
+			}
+		});
+
+		return false;
+	});
+
 });

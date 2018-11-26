@@ -23,12 +23,12 @@
 				<col span="1"/>
 				<col span="1"/>
 
-				
+
 			</colgroup>
 			<thead align="center">
 				<tr class="table-big-head" align="center">
 					<th align="center">&nbsp;&nbsp;Company name</th>
-					<th>&nbsp;&nbsp;Industry</th>
+					<th>&nbsp;&nbsp;Industry </th>
 					<th>&nbsp;&nbsp;Symbol</th>
 					<th>   Series</th>
 					<th>   ISIN Code</th>
@@ -43,7 +43,7 @@
 						out.println("<tr>");
 							out.println("<td><a href='http://www.google.com/search?q="+rs.getString("Company_name")+"'><b>"+rs.getString("Company_name")+"</b></a></td>");
 							out.println("<td>"+rs.getString("Industry")+"</td>");
-							out.println("<td>"+rs.getString("Symbol")+"</td>");
+							out.println("<td>"+rs.getString("symbol")+"</td>");
 							out.println("<td>"+rs.getString("Series")+"</td>");
 							out.println("<td>"+rs.getString("ISIN_code")+"</td>");
 						out.println("</tr>");

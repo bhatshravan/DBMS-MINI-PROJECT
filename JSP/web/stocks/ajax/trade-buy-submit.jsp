@@ -7,14 +7,14 @@ String uid = (String)request.getSession().getAttribute("userid");
 				//out.println(uid);
 
 float money=0;
-rs = st.executeQuery("select current_money from bank WHERE customer_id="+uid+";");
+rs = st.executeQuery("select current_money from bank WHERE user_id="+uid+";");
 if(rs.next())
 	{
 		money = Float.valueOf(rs.getString("current_money"));
 	}
 
 //out.println("select * from Price WHERE stock='"+request.getParameter("stock")+"' AND time >= '"+request.getParameter("date")+"' LIMIT 1;");
-	rs = st.executeQuery("select * from Price WHERE stock='"+request.getParameter("stock")+"' AND time >= '"+request.getParameter("date")+"' ORDER BY time ASC LIMIT 1;");
+	rs = st.executeQuery("select * from Price WHERE symbol='"+request.getParameter("stock")+"' AND time >= '"+request.getParameter("date")+"' ORDER BY time ASC LIMIT 1;");
 	if(rs.next())
 		{
 			float prices = Float.valueOf(rs.getString("close"));
@@ -38,15 +38,14 @@ if(rs.next())
 						ps = con.prepareStatement(sql);
 						int i = ps.executeUpdate();
 
-					}	
+					}
 					else
 					{
-						out.println("In else");
 						CallableStatement cstat = con.prepareCall("{call buy (?,?,?,?,?)}");
 						cstat.setString(1, uid);
 						cstat.setString(2, request.getParameter("stock"));
 						cstat.setString(3, String.valueOf(volume));
-						cstat.setString(4, String.valueOf(sale));
+						cstat.setString(4, String.valueOf(prices));
 						cstat.setString(5, String.valueOf(date));
 						//out.println(cstat);
 						ResultSet sp2 = cstat.executeQuery();
@@ -54,12 +53,12 @@ if(rs.next())
 					}
 					PreparedStatement ps = null;
 
-						String sql="Update bank set current_money = current_money - "+sale+" WHERE customer_id='"+uid+"'";
-						ps = con.prepareStatement(sql);
-						int i = ps.executeUpdate();
+					String sql="Update bank set current_money = current_money - "+sale+" WHERE user_id='"+uid+"'";
+					ps = con.prepareStatement(sql);
+					int i = ps.executeUpdate();
 
 
-					ResultSet rs2 = st.executeQuery("select current_money from bank WHERE customer_id="+uid+";");
+					ResultSet rs2 = st.executeQuery("select current_money from bank WHERE user_id="+uid+";");
 					if(rs2.next())
 					{
 						out.println("<h2>Shares successfully added, New balance :<i class='fa fa-rupee-sign'></i> "+rs2.getString("current_money"));

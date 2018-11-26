@@ -13,7 +13,7 @@
 			<li><a href="/WebApplication1/stocks/trade/index.jsp">Trade stocks</a></li>
 			<li><a href="/WebApplication1/stocks/trade/profitorloss.jsp">Profit & loss</a></li>
 			<li><a href="/WebApplication1/stocks/trade/investments.jsp">Investments</a></li>
-			<li><a href="/WebApplication1/stocks/trade/index.jsp">Bank</a></li>
+			<li><a href="/WebApplication1/stocks/bank/index.jsp">Bank</a></li>
 			<li><a href="/WebApplication1/logout.jsp"><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li>
 		</ul>
 	</div>

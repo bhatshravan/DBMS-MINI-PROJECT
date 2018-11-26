@@ -3,7 +3,7 @@
 <%
 ResultSet rs;
 //out.println("select * from Price WHERE stock='"+request.getParameter("stock")+"' AND time >= '"+request.getParameter("date")+"' LIMIT 1;");
-rs = st.executeQuery("select * from Price WHERE stock='"+request.getParameter("stock")+"' AND time >= '"+request.getParameter("date")+"' ORDER BY time ASC LIMIT 1;");
+rs = st.executeQuery("select * from Price WHERE symbol='"+request.getParameter("stock")+"' AND time >= '"+request.getParameter("date")+"' ORDER BY time ASC LIMIT 1;");
 if(rs.next())
 	{
 		float prices = Float.valueOf(rs.getString("close"));

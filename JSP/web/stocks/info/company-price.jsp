@@ -25,7 +25,7 @@
 				<col span="1"/>
 				<col span="1" style="background-color:#fff49c; color: #FFFFFF;"/>
 
-				
+
 			</colgroup>
 			<thead align="center">
 				<tr class="table-big-head" align="center">
@@ -40,11 +40,11 @@
 			<tbody class="table-big">
 				<%
 				ResultSet rs;
-				rs = st.executeQuery("select P.stock,P.time,P.open,P.high,P.close,P.low,P.volume from Price P ORDER BY P.time DESC, P.stock ASC LIMIT 48;");
+				rs = st.executeQuery("select P.* from Price P ORDER BY P.time DESC, P.symbol ASC LIMIT 48;");
 				while(rs.next())
 					{
 						out.println("<tr>");
-							out.println("<td><b>"+rs.getString("stock")+"</b></td>");
+							out.println("<td><b>"+rs.getString("symbol")+"</b></td>");
 							out.println("<td>"+rs.getString("open")+"</td>");
 							out.println("<td>"+rs.getString("high")+"</td>");
 							out.println("<td>"+rs.getString("low")+"</td>");

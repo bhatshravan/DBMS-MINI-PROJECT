@@ -10,7 +10,8 @@ String amt = request.getParameter("amt");
 PreparedStatement ps = null;
 
 
-String sql="Update bank set current_money = current_money + "+amt+" WHERE customer_id="+uid;
+String sql="Update bank set current_money = current_money + "+amt+" WHERE user_id="+uid;
+//out.println(sql);
 ps = con.prepareStatement(sql);
 
 try{
@@ -20,7 +21,7 @@ catch(Exception e){
 	out.println(e);
 }
 ResultSet rs;
-rs = st.executeQuery("select current_money from bank WHERE customer_id="+uid+";");
+rs = st.executeQuery("select current_money from bank WHERE user_id="+uid+";");
 if(rs.next())
 	{
 		current_money = rs.getString("current_money");

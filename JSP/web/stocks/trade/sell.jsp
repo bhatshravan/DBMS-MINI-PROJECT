@@ -14,7 +14,7 @@
 	<%@include file="../connect.jsp"%>
 	<%@include file="../session.jsp"%>
 	<%@include file="../style/navbar.jsp"%>
-	
+
 	<div class="container">
 		<div class="row">
 			<h2>Sell stocks</h2>
@@ -35,18 +35,22 @@
 						<th align="center">&nbsp;&nbsp;Company name</th>
 						<th>&nbsp;&nbsp;Volume</th>
 						<th>   Price</th>
+						<th>   Investment</th>
 						<th>   Date</th>
 					</tr>
 				</thead>
 				<tbody class="table-big">
 					<%
+
 					rs = st.executeQuery("select * from investments WHERE user_id = '"+uid+"' ORDER BY time DESC, symbol ASC;");
 					while(rs.next())
 						{
+							int invest = (int)rs.getFloat("price_bought") * rs.getInt("volume");
 							out.println("<tr>");
 								out.println("<td><b>"+rs.getString("symbol")+"</b></td>");
 								out.println("<td>"+rs.getString("volume")+"</td>");
-								out.println("<td>"+rs.getString("price_bought")+"</td>");
+								out.println("<td>Rs. "+rs.getString("price_bought")+"</td>");
+								out.println("<td>Rs. "+invest+"</td>");
 								out.println("<td>"+rs.getString("time")+"</td>");
 							out.println("</tr>");
 						}
@@ -108,33 +112,33 @@
 							<option value="WIPRO">WIPRO</option>
 							<option value="YESBANK">YESBANK</option>
 							<option value="ZEEL">ZEEL</option>
-						</select> 
+						</select>
 					</div>
 					<div class="form-group row col-md-12>
 						<label for="Date" class="label-small">Bought date:</label>
-						<input type="date" class="form-control" id="date_buy">
+						<input type="date" class="form-control" id="buydate">
 					</div>
 					<div class="form-group row col-md-4>
 						<label for="Date" class="label-small">Date to sell:</label>
-						<input type="date" class="form-control" id="date_sell">
+						<input type="date" class="form-control" id="selldate">
 					</div>
 					<div class="form-group row ">
                     </div>
-					
+
 					<div class="form-group row col-md-offset-4 col-md-4">
 						<label for="Volume" class="label-small">Volume:</label>
 						<input type="number" class="form-control" id="volume" size="5" required>
                     </div>
                     <div class="form-group row ">
                     </div>
-                    
-                    <button id="trade-buy-check" class="btn btn-danger">Check price</button>
-					<button id="trade-buy-submit" class="btn btn-success">Submit</button>
+
+                    <button id="trade-sell-check" class="btn btn-danger">Check price</button>
+					<button id="trade-sell-submit" class="btn btn-success">Submit</button>
 				</form>
 			</div>
 		</div>
 		<hr/>
-		<div class="row msg">	
+		<div class="row msg">
 		</div>
 
 	</div>

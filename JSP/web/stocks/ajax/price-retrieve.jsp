@@ -24,11 +24,11 @@
 		<%
 		String uid = (String)request.getSession().getAttribute("userid");
 
-		String type = request.getParameter("type"); 
-		String stock = request.getParameter("stock"); 
-		String from = request.getParameter("from"); 
-		//String interval = request.getParameter("interval"); 
-		String to = request.getParameter("to"); 
+		String type = request.getParameter("type");
+		String stock = request.getParameter("stock");
+		String from = request.getParameter("from");
+		//String interval = request.getParameter("interval");
+		String to = request.getParameter("to");
 
 
 		String data="",data2="",data3="";
@@ -36,7 +36,7 @@
 		//out.println("SELECT * FROM Price WHERE time >= '"+from+"' AND time <= '"+to+"' AND stock ='"+stock+"' LIMIT 31");
 		try{
 		ResultSet rs;
-		rs = st.executeQuery("SELECT * FROM Price WHERE time >= '"+from+"' AND time <= '"+to+"' AND stock ='"+stock+"' LIMIT 31");
+		rs = st.executeQuery("SELECT * FROM Price WHERE time >= '"+from+"' AND time <= '"+to+"' AND symbol ='"+stock+"' LIMIT 31");
 
 		if(rs.next())
 		{
@@ -68,7 +68,7 @@
 
 				data3+=",{ x : "+test22+" ,y : "+rs.getString(type)+"}";
 
-				data2+=rs.getString("time");	
+				data2+=rs.getString("time");
 				out.println("<tr>");
 					out.println("<td>"+rs.getString("time")+"</td>");
 					out.println("<td>"+rs.getString("open")+"</td>");
@@ -78,6 +78,10 @@
 					out.println("<td>"+rs.getString("volume")+"</td>");
 				out.println("</tr>");
 			}
+		}
+		else
+		{
+			out.println("<h2> No such stocks available between the dates you had entered </h2>");
 		}
 	}
 	catch(Exception e){
@@ -99,7 +103,7 @@
 			text: "Stock Prices"
 		},
 		axisX:{
-			
+
 			crosshair: {
 				enabled: true,
 				snapToDataPoint: true
@@ -115,7 +119,7 @@
 
 		toolTip:{
 			shared:true
-		},  
+		},
 		legend:{
 			cursor:"pointer",
 			verticalAlign: "bottom",
@@ -123,8 +127,8 @@
 			dockInsidePlotArea: true,
 			itemclick: toogleDataSeries
 		},
-		data: [{        
-			type: "line",       
+		data: [{
+			type: "line",
 
 			name: "<% out.print(type.toUpperCase()); %>",
 			markerType: "square",

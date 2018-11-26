@@ -19,16 +19,16 @@
 		<table class='table table-bordered ctable'>
 			<colgroup>
 
-				
+
 			</colgroup>
 			<thead align="center">
 				<tr class="table-big-head" align="center">
 					<th align="center">&nbsp;&nbsp;Company name</th>
-					<th>&nbsp;&nbsp;Stock</th>
 					<th>&nbsp;&nbsp;Volume</th>
 					<th>   Bank</th>
 					<th>   Price</th>
 					<th>   Date</th>
+					<th>   Profit/loss</th>
 				</tr>
 			</thead>
 			<tbody class="table-big">
@@ -43,8 +43,9 @@
 							out.println("<td><b>"+rs.getString("symbol")+"</b></td>");
 							out.println("<td>"+rs.getString("volume")+"</td>");
 							out.println("<td>"+rs.getString("price_bought")+"</td>");
-							out.println("<td>"+rs.getString("date_bought")+"</td>");
 							out.println("<td>"+rs.getString("price_sold")+"</td>");
+							out.println("<td>"+rs.getString("date_sold")+"</td>");
+							out.println("<td>"+rs.getString("totalpl")+"</td>");
 						out.println("</tr>");
 					}
 					%>
