@@ -49,20 +49,13 @@
 
                             ResultSet rs = st.executeQuery("select * from users where email='" + email + "';");
                             if (rs.next()) {
-                                    //out.println(rs);
-
-
                                     %>
-
-
                                     <p class="text-info">User is already present<br></p>
                                     <%                                   
                                 }
                                 else {
 
                                 String inser = "insert into users(`name`,`email`,`password`,`phone`,`bank`) values('" + name + "','" + email + "','" + encpass + "','" + phone + "','" + bank + "');";
-                                    //out.println(inser);
-                                    //int i = st.executeUpdate(inser);
                                     CallableStatement cstat = con.prepareCall("{call register (?,?,?,?,?)}");
                                     cstat.setString(1, name);
                                     cstat.setString(2, email);
@@ -73,11 +66,6 @@
                                     ResultSet rs2 =cstat.executeQuery();
                                     con.close();
                                     cstat.close();
-                                    /*if (i > 0) {
-                                        response.sendRedirect("success.html");
-                                    } else {
-                                        response.sendRedirect("register.html");
-                                    }*/
 
                                     %>
 

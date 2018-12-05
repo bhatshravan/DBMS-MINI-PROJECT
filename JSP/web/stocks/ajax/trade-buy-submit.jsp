@@ -4,7 +4,7 @@
 ResultSet rs;
 
 String uid = (String)request.getSession().getAttribute("userid");
-				//out.println(uid);
+
 
 float money=0;
 rs = st.executeQuery("select current_money from bank WHERE user_id="+uid+";");
@@ -13,7 +13,6 @@ if(rs.next())
 		money = Float.valueOf(rs.getString("current_money"));
 	}
 
-//out.println("select * from Price WHERE stock='"+request.getParameter("stock")+"' AND time >= '"+request.getParameter("date")+"' LIMIT 1;");
 	rs = st.executeQuery("select * from Price WHERE symbol='"+request.getParameter("stock")+"' AND time >= '"+request.getParameter("date")+"' ORDER BY time ASC LIMIT 1;");
 	if(rs.next())
 		{

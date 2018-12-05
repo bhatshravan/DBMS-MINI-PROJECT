@@ -42,7 +42,7 @@
 		{
 			String ctime = rs.getString("time");
 			String test[] = (ctime.split("-"));
-			String test2 = "new Date("+test[0]+","+test[1]+","+test[2]+" )";
+			String test2 = "new Date("+test[0]+","+(Integer.parseInt(test[1])-1)+","+test[2]+" )";
 
 			data+=rs.getString(type);
 			data3+="{ x : "+test2+" ,y : "+rs.getString(type)+"}";
@@ -63,7 +63,7 @@
 
 				ctime = rs.getString("time");
 				String test21[] = (ctime.split("-"));
-				String test22 = "new Date("+test21[0]+","+test21[1]+","+test21[2]+" )";
+				String test22 = "new Date("+test21[0]+","+(Integer.parseInt(test21[1])-1)+","+test21[2]+" )";
 
 
 				data3+=",{ x : "+test22+" ,y : "+rs.getString(type)+"}";

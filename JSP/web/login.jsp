@@ -48,14 +48,6 @@
                         PreparedStatement psm = con.prepareStatement(query);
                         psm.setString(1,userid);
                         ResultSet rs=psm.executeQuery();
-                        /*
-                        session.setAttribute("userid", userid);
-                        String pwd = request.getParameter("pwd");
-
-                        String used = "select * from users where email='" + userid + "';";
-                        out.println(used);
-
-                        ResultSet rs = st.executeQuery("select * from users where email='" + userid + "';");*/
 
                         if (rs.next()) {
 
@@ -69,7 +61,6 @@
                         String decoded = new String(decoder.decodeBuffer(cipher));
                         if (decoded.equals(pwd))
                         {
-
                             username = rs.getString(3);
                             session.setAttribute("userid", rs.getString("user_id"));
                             session.setAttribute("username", username);
